@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,28 @@
 
     <title>Minesweep Game</title>
 </head>
-<body onload="initGame()">
-    <h1>Minesweep Game</h1>
 
-    <label id="minutes">00</label>:<label id="seconds">00</label>
-    <div>
-        <button onclick="level(this)">Beginner</button>
-        <button onclick="level(this)">Medium</button>
-        <button onclick="level(this)">Expert</button>
+<body onload="initGame()" ncontextmenu="return false;">
+    <h1>Minesweep Game</h1>
+    <h1 class="player-status"></h1>
+    <div class="timer">
+        <div class="timer"><span>00:00:00</span></div>
+        <h4 class="playerLive">Life Remainig: ❤️❤️❤️</h4>
+
+        <div>
+            <button class="restartGame" onclick="restartGame()">😃</button>
+        </div>
     </div>
-    <div class="board-container"></div>  
+    <div>
+        <button onclick="level(4)">Beginner</button>
+        <button onclick="level(8)">Medium</button>
+        <button onclick="level(12)">Expert</button>
+    </div>
+    <div class="board-container"></div>
 </body>
-<script src="js/main.js"></script>
+
+<script src="js/mine.js"></script>
+<script src="js/board.js"></script>
 <script src="js/utils.js"></script>
+
 </html>

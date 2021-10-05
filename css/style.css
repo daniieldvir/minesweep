@@ -2,19 +2,45 @@
     text-align: center;
 }
 
+
+body {
+    background-color: lightcyan;
+}
+
 .board-container {
     box-sizing: content-box;
     display: inline-block;
-    margin-top: 10px;
-    
+    margin-top: 10px;   
+    position: static
+ 
 }
 
 .cell {
-    width: 50px;
-    height: 50px ;
+    background-color: lightgray;
+    width: 60px;
+    height: 60px ;
+    
 }
 
-.negs {
-    color: black;
-    font-size: medium;
+.timerDisplay { 
+    margin-bottom: 10px;
 }
+
+button {
+    background-color: black;
+    color: white;
+    margin-top: 10px; 
+  
+}
+
+
+.player-status {
+    font-size: medium;
+    color: red;
+    margin-top: auto;
+    box-sizing: content-box;
+    display: inline-block;
+}
+
+
+
