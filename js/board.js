@@ -8,30 +8,32 @@ var gStrarLevel = 4;
 function initGame() {
     gBoard = buildBoard()
     renderBoard(gBoard, '.board-container')
+    gStrarLevel = 4;
+    totalSeconds = 0;  
+    gLive = 3;  
     gFistClick = false;
     isTimmerOn = false;
     minutesLabel = document.getElementById("minutes");
     secondsLabel = document.getElementById("seconds");
-    totalSeconds = 0;
     clearInterval(gInterval);
-    gLive = 3;
 }
 
 
 /// render the board
 function renderBoard(board, selector) {
-    var strHTML = `<table border="1"><tbody>`;
+    var strHTML = `<table oncontextmenu="return false" border="1"><tbody>`
     for (var i = 0; i < board.length; i++) {
-        strHTML += `<tr>\n`;
+        strHTML += `<tr>`
         for (var j = 0; j < board.length; j++) {
-            strHTML += `\t<td class="cell cell${i}-${j}" onclick="cellClicked(this,${i},${j},event)"></td>`
+            strHTML += `<td class="cell cell${i}-${j}" onmousedown="cellClicked(this,${i},${j},event)"></td>`
         }
-        strHTML += `</tr>\n`
+        strHTML += `</tr>`
     }
-
-    var elConteiner = document.querySelector(selector);
-    elConteiner.innerHTML = strHTML;
+    strHTML += `</tbody></table>`
+    var elConteiner = document.querySelector(selector)
+    elConteiner.innerHTML = strHTML
 }
+
 
 /// level size
 function level(number) {
@@ -41,13 +43,13 @@ function level(number) {
     if (number === 8) gMineCount = 12;
     if (number === 12) gMineCount = 30;
 
-    initGame()
     document.querySelector('.playerLive').innerText = 'Life Remainig: ❤️❤️❤️';
     document.querySelector('.restartGame').innerText = '😃';
     document.querySelector('.player-status').innerText = '';
-    document.querySelector('.timer span').innerText = ''
-
+    //document.querySelector('.timer span').innerText = ''
+    
     clearInterval(gInterval)
+    initGame()
 }
 
 
@@ -61,7 +63,7 @@ function buildBoard() {
                 minesAroundCount: 0,
                 isShown: false,
                 isMine: false,
-                isMarked: true
+                isMarked: false
             }
             board[i][j] = cell;
         }
@@ -69,3 +71,5 @@ function buildBoard() {
     // console.table('board', board)
     return board
 }
+
+

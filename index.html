@@ -6,31 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-
     <title>Minesweep Game</title>
 </head>
 
-<body onload="initGame()" ncontextmenu="return false;">
+<body onload="initGame()">
     <h1>Minesweep Game</h1>
     <h1 class="player-status"></h1>
     <div class="timer">
-        <div class="timer"><span>00:00:00</span></div>
+        <style>
+            body {
+                background-image: url('img/background.jpeg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
         <h4 class="playerLive">Life Remainig: ❤️❤️❤️</h4>
-
+        <div class="timer"><span>00:00:00</span></div>
         <div>
             <button class="restartGame" onclick="restartGame()">😃</button>
         </div>
     </div>
     <div>
-        <button onclick="level(4)">Beginner</button>
-        <button onclick="level(8)">Medium</button>
-        <button onclick="level(12)">Expert</button>
+        <button class="level" onclick="level(4)">Beginner</button>
+        <button class="level" onclick="level(8)">Medium</button>
+        <button class="level" onclick="level(12)">Expert</button>
     </div>
-    <div class="board-container"></div>
+    <div oncontextmenu="return false" class="board-container"></div>
+   
+    <script src="js/mine.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/utils.js"></script>
 </body>
-
-<script src="js/mine.js"></script>
-<script src="js/board.js"></script>
-<script src="js/utils.js"></script>
 
 </html>

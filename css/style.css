@@ -26,7 +26,7 @@ body {
     margin-bottom: 10px;
 }
 
-button {
+.level {
     background-color: black;
     color: white;
     margin-top: 10px; 
@@ -40,6 +40,10 @@ button {
     margin-top: auto;
     box-sizing: content-box;
     display: inline-block;
+}
+
+.restartGame {
+    margin-top: 10px;
 }
 
 

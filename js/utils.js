@@ -15,6 +15,7 @@ function setMinesNegsCoun(board, rowIdx, colIdx) {
     return count;
 }
 
+
 function getRandomInt(min, max) {
     var randomNum = Math.floor(Math.random() * (max - min) + min);
     return randomNum;
@@ -32,17 +33,20 @@ function getEmptyLocation() {
     return emptyLocations[getRandomIntInclusive(0, emptyLocations.length - 1)];
 }
 
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+
 function renderCell(location, value) {
     // Select the elCell and set the value
     var elCell = document.querySelector(`.cell${location.i}-${location.j}`);
     elCell.innerHTML = value;
 }
+
 
 function timer(startTime) {
     var elTimerSpan = document.querySelector('.timer span')
@@ -59,4 +63,11 @@ function timer(startTime) {
 }
 
 
-window.addEventListener("contextmenu", e => e.preventDefault());
+// window.addEventListener('contextmenu', e => {
+//     e.preventDefault();
+//     console.log(e.button)
+// })
+
+
+
+
