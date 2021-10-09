@@ -133,6 +133,7 @@ function level(number) {
     elSmile.innerText = START_SMAILE;
     document.querySelector('.player-status').innerText = '';
 
+    gFistClick = false
     clearInterval(gTimeInterval)
     initGame()
 }

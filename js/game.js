@@ -47,6 +47,7 @@ function cellClicked(elCell, i, j, event) {
         setMainOnBoard(gBoard, gMineCount);
         setMinesNegsCoun()
         gFistClick = true;
+        console.log('gFistClick', gFistClick)
     }
 
     if (event.button === 2) {
@@ -112,7 +113,7 @@ function checkGameOver() {
 
         setTimeout(function () {
             restartGame()
-        }, 3000)
+        }, 2000)
 
         clearInterval(gTimeInterval)
     }
@@ -145,10 +146,11 @@ function openPopUp() {
     var statusTxt = (isWin) ? 'Good Jub' : 'Game Over!'
     var elpopUp = document.querySelector('.pop-up');
     elpopUp.style.display = 'block'
-    document.querySelector('.pop-up').innerText = statusTxt;
+    document.querySelector('.pop-up').innerText = statusTxt ;
+
     setTimeout(function () {
         closePopUp()
-    }, 3000)
+    }, 2000)
 }
 
 function closePopUp() {
