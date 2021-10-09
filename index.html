@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +7,18 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Minesweep Game</title>
 </head>
-
 <body onload="initGame()">
     <h1>Minesweep Game</h1>
-    <h1 class="player-status"></h1>
-    <div class="timer">
-        <style>
-            body {
-                background-image: url('img/background.jpeg');
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-            }
-        </style>
-        <h4 class="playerLive">Life Remainig: ❤️❤️❤️</h4>
+    <div class="player-status"> 
+        <span></span>
+    </div>
+    <div >
+        <span class="player-live live" >Life Remainig: ❤️❤️❤️ ▪️</span>
+        <span class="hint" onclick="hint(this)">Need a hint? 💡💡💡</span>
+    </div>
         <div class="timer"><span>00:00:00</span></div>
         <div>
-            <button class="restartGame" onclick="restartGame()">😃</button>
+            <p class="smail-icon" onclick="restartGame()"></p>
         </div>
     </div>
     <div>
@@ -32,11 +26,15 @@
         <button class="level" onclick="level(8)">Medium</button>
         <button class="level" onclick="level(12)">Expert</button>
     </div>
-    <div oncontextmenu="return false" class="board-container"></div>
-   
-    <script src="js/mine.js"></script>
+    <div class="board-container"></div>
+    <div class="pop-up" onclick="openPopUp()">
+    </div>
+    <!-- <div>
+        <button class="pop-up-buttom" onclick="closePopUp()">x</button>
+    </div> -->
+ 
+    <script src="js/game.js"></script>
     <script src="js/board.js"></script>
     <script src="js/utils.js"></script>
 </body>
-
 </html>

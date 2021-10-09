@@ -4,7 +4,10 @@
 
 
 body {
-    background-color: lightcyan;
+    background-image: url(/img/background.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .board-container {
@@ -16,35 +19,76 @@ body {
 }
 
 .cell {
-    background-color: lightgray;
+    background-color: rgb(211, 211, 211);
     width: 60px;
-    height: 60px ;
-    
+    height: 60px ; 
 }
 
-.timerDisplay { 
-    margin-bottom: 10px;
+/* .cell.marked {
+    background-color: darkseagreen
+} */
+
+
+.timer { 
+    width: 100px;
+    margin-top: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .level {
     background-color: black;
     color: white;
     margin-top: 10px; 
-  
+    cursor: pointer;  
 }
-
 
 .player-status {
     font-size: medium;
     color: red;
+    font-size: 80px;
     margin-top: auto;
     box-sizing: content-box;
     display: inline-block;
 }
 
-.restartGame {
-    margin-top: 10px;
+.smail-icon {
+    margin-top: 50px;
+    cursor: pointer;
 }
+
+
+.hint {
+    cursor: pointer;
+}
+
+.pop-up {
+    height: 70px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    display:none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    width: 300px;
+}
+
+.pop-up-buttom {
+    float: right;
+    position: absolute;
+    top: 48%;
+    right: 38%;
+    transform: translate(-50%, -50%);
+    padding: 5px;  
+}   
 
 
 
