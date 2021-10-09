@@ -8,6 +8,7 @@ const WIN_SMAILE = '😎'
 const LOSE_SMAILE = '🤯'
 
 var gLive = 3;
+var gHints = 3;
 var gBoard;
 var gStrarLevel = 4;
 
@@ -78,17 +79,30 @@ function victory() {
     clearInterval(gTimeInterval);
 }
 
-///hint - DONT WORK
-// function hint(elCell, i, j) {
-//     for (let i = 0; i < gBoard.length; i++) {
-//         for (var j = 0; j < gBoard.length; j++) {
-//             var elCell = gBoard[i][j];
-//             elCell.isShown = !elCell.isShown;
-//         }
-//     }
-//     var countNegs = setMinesNegsCoun();
-//     renderCell({ i, j }, countNegs)
+///hint - DONT WORK :(
+function hint(elCell, i, j) {
+    for (let i = 0; i < gBoard.length; i++) {
+        for (var j = 0; j < gBoard.length; j++) {
+            var elCell = gBoard[i][j];
+            elCell.isShown = !elCell.isShown;
+        }
+    }
+    var countNegs = setMinesNegsCoun();
+    renderCell({ i, j }, countNegs)
+}
+
+// function hint() {
+// 	if (gHints > 0) {
+// 		var rendLocation = getEmptyLocation();
+// 		var currCell = gBoard[rendLocation.i][rendLocation.j];
+// 		while (currCell.isShown || currCell.isMarked) {
+// 			rendLocation = getEmptyLocation();
+// 			currCell = gBoard[rendLocation.i][rendLocation.j];
+// 		}
+
+// 	}
 // }
+
 
 /// render the board
 function renderBoard(board, selector) {
