@@ -3,7 +3,6 @@
 var gTimeInterval;
 var gMineCount = 2;
 var gMarkedCount = 0;
-var gEmptyCellPos = [];
 var gFistClick = false;
 var isWin = false;
 
@@ -77,9 +76,9 @@ function cellClicked(elCell, i, j, event) {
 
             gLive--;
 
-            if (gLive === 2) document.querySelector('.player-live').innerText = 'Life Remainig: ❤️❤️ ▪️';
-            if (gLive === 1) document.querySelector('.player-live').innerText = 'Life Remainig: ❤️ ▪️';
-            if (gLive === 0) document.querySelector('.player-live').innerText = 'Life Remainig:  ▪️';
+            // if (gLive === 2) document.querySelector('.player-live').innerText = 'You\'r life count: ❤️❤️ ▪️';
+            if (gLive === 1) document.querySelector('.player-live').innerText = 'You\'r life count: ❤️ ▪️';
+            if (gLive === 0) document.querySelector('.player-live').innerText = 'You\'r life count:  ▪️';
 
             checkGameOver(isWin);
             return;
@@ -105,7 +104,7 @@ function checkGameOver() {
 
     if (gLive === 0) {
         openPopUp()
-        document.querySelector('.player-live').innerText = 'Life Remainig:  ▪️';
+        document.querySelector('.player-live').innerText = 'You\'r life count:  ▪️';
         var elSmile = document.querySelector('.smail-icon');
         elSmile.innerText = LOSE_SMAILE;
         gGame.isOn = false;
@@ -135,7 +134,7 @@ function restartGame() {
     secondsLabel = document.getElementById("seconds");
     totalSeconds = 0;
 
-    document.querySelector('.player-live').innerText = 'Life Remainig: ❤️❤️❤️ ▪️';
+    document.querySelector('.player-live').innerText = 'You\'r life count: ❤️❤️ ▪️';
     document.querySelector('.player-status').innerText = '';
     var elSmile = document.querySelector('.smail-icon');
     elSmile.innerText = START_SMAILE;

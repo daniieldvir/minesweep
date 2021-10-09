@@ -7,7 +7,7 @@ const START_SMAILE = '😃'
 const WIN_SMAILE = '😎'
 const LOSE_SMAILE = '🤯'
 
-var gLive = 3;
+var gLive = 2;
 var gHints = 3;
 var gBoard;
 var gStrarLevel = 4;
@@ -35,7 +35,7 @@ function initGame() {
     gBoard = buildBoard()
     renderBoard(gBoard, '.board-container')
     gStrarLevel = 4;
-    gLive = 3;
+    gLive = 2;
 
     gFistClick = false;
     gGame.isOn = true;
@@ -128,7 +128,7 @@ function level(number) {
     if (number === 8) gMineCount = 12;
     if (number === 12) gMineCount = 30;
 
-    document.querySelector('.player-live').innerText = 'Life Remainig: ❤️❤️❤️ ▪️';
+    document.querySelector('.player-live').innerText = 'You\'r life count: ❤️❤️ ▪️';
     var elSmile = document.querySelector('.smail-icon');
     elSmile.innerText = START_SMAILE;
     document.querySelector('.player-status').innerText = '';
